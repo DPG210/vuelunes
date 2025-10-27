@@ -10,6 +10,12 @@ app.config.globalProperties.$filters={
         }else{
             return "<span style='color:green'>"+num+"</span>";
         }
+    },
+    getOperacion(numero, multi){
+        return numero + "*" + multi
+    },
+    getResultado(numero,multi){
+        return numero*multi
     }
 }
 
