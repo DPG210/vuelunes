@@ -20,14 +20,14 @@
                         <th>Resultado</th>
                     </tr>
                 </thead>
-                
                     <tbody>
-                    <tr v-for="contador in 10" :key="contador">
+                    <tr v-for="contador in 11" :key="contador">
+                        
                         <td>
-                            {{numero+ "*"+ contador}}
+                            {{numero+ "*"+ (contador-1)}}
                         </td>
                         <td>
-                            {{numero*contador}}
+                            {{numero*(contador-1)}}
                         </td>
                     </tr>
                 </tbody>
@@ -42,12 +42,12 @@
                 </thead>
                 
                     <tbody v-if="numero !=0">
-                    <tr v-for="contador in 10" :key="contador">
+                    <tr v-for="contador in 11" :key="contador">
                         <td>
-                            {{$filters.getOperacion(numero,contador)}}
+                            {{$filters.getOperacion(numero,(contador-1))}}
                         </td>
                         <td>
-                           {{$filters.getResultado(numero,contador)}}
+                           {{$filters.getResultado(numero,(contador-1))}}
                         </td>
                     </tr>
                 </tbody>
@@ -62,7 +62,8 @@ export default {
     data(){
         return{
             numero:0,
-            html:""
+            html:"",
+            contador:0
         }
     },
     methods:{
